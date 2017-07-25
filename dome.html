@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script src="laydate/laydate.js"></script>
+		<script src="jquery.laydate.js"></script>
+	<body>
+		<input type="text" class="laydate-icon " placeholder="请选中日期范围" id="query-date">	
+		<input type="hidden" id="query-date-start">
+        <input type="hidden" id="query-date-end">
+		<script type="text/javascript">
+			$(function(){
+				$('#query-date').click(function(){
+					/*
+					 *主要功能一个input选择时间范围
+					 * jquer.laydate新增配置参数
+					 * pos：日期显示在元素的位置
+					 * choose:function(datas,option){
+					 * 	//datas 选中时间
+					 * 	//option 配置对象
+					 * }
+					 * 其他参考laydate官网
+					 * */
+					$.laydateRange({
+						start:{//开始日期配置
+							elem: '#query-date-start',//显示元素位置&&选中值 必须niput
+							pos:$('#query-date'),//显示元素位置 优先
+							choose:function(datas,option){//选中时间,配置对象
+								//datas 选中时间
+								//option 配置对象
+							}
+						},
+						end:{//结束日期配置
+							elem: '#query-date-end',//显示元素位置&&选中值 必须niput
+							pos:$('#query-date'),//显示元素位置
+							choose:function(datas,option){
+								//datas 选中时间
+								//option 配置对象
+							}
+						}
+					})	
+				})
+			})
+		</script>
+	</body>
+</html>
